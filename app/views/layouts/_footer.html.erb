@@ -1,0 +1,9 @@
+<% if Apartment::Tenant.current.present? && Apartment::Tenant.current != "public" %>
+  <p style="color: red; float:bottom;">
+    Welcome to <%= Apartment::Tenant.current %>
+  </p>
+<% else %>
+  <p style="color: green; float:bottom;">
+    You are now back to to <%= request.domain %>
+  </p>
+<% end %>
